@@ -64,7 +64,7 @@ def tttr2xfcs (y,num,NcascStart,NcascEnd, Nsub):
 
      """
     
-    print('y',y,y.dtype)
+    #print('y',y,y.dtype)
     dt = np.max(y)-np.min(y)
     y = np.round(y[:],0)
     numshape = num.shape[0]
@@ -99,7 +99,7 @@ def tttr2xfcs (y,num,NcascStart,NcascEnd, Nsub):
         num =np.zeros((y.shape[0],2))
         
 
-        
+       
         #Finds the total photons in each bin. and represents as count.
         #This is achieved because we have the indices of each unique time photon and cumulative total at each point.
         num[:,0] = np.diff(diffArr1)
@@ -125,8 +125,13 @@ def tttr2xfcs (y,num,NcascStart,NcascEnd, Nsub):
 
                 #If the weights (num) are one as in the first Ncasc round, then the correlation is equal to np.sum(i1)
                 
-                i1 = np.where(i1.astype(np.bool))[0]
-                i2 = np.where(i2.astype(np.bool))[0]
+                #np.bool has been deprecetated in numpy 1.20
+                #i1 = np.where(i1.astype(np.bool))[0]
+                #i2 = np.where(i2.astype(np.bool))[0]
+                
+                i1 = np.where(i1.astype(bool))[0]
+                i2 = np.where(i2.astype(bool))[0]
+
 
                 #Now we want to weight each photon corectly.
                 #Faster dot product method, faster than converting to matrix.
