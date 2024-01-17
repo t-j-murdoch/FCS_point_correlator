@@ -11,7 +11,7 @@
 
 <p> To install in a new conda environment:
 <ol> conda install numpy scipy matplotlib lmfit git </ol>
-<ol> pip install git+https://github.com/t-j-murdoch/FCS_point_correlator/ —upgrade (should work for all OS as long as the dependencies are met).</ol>
+<ol> pip install git+https://github.com/t-j-murdoch/FCS_point_correlator/ </ol>
 <ol> To run: python -m focuspoint.FCS_point_correlator</ol>
 
 <p>NB -only the tttr2xfcs in correlation_methods.py as used in https://github.com/t-j-murdoch/sgFCS_PTU has been tested</p>
